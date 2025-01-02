@@ -1,4 +1,3 @@
-class_name AudioManager
 extends Node2D
 ## Audio manager node. Inteded to be globally loaded as a 2D Scene. Handles [method create_2d_audio_at_location()] and [method create_audio()] to handle the playback and culling of simultaneous sound effects.
 ##
