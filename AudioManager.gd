@@ -6,12 +6,12 @@ var sound_effect_dict: Dictionary = {}
 @export var sound_effects: Array[SoundEffect]
 
 
-func _ready():
+func _ready() -> void:
 	for sound_effect: SoundEffect in sound_effects:
 		sound_effect_dict[sound_effect.type] = sound_effect
 
 
-func create_2d_audio_at_location(location, type : SoundEffect.SOUND_EFFECT_TYPE) -> void:
+func create_2d_audio_at_location(location, type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 	if sound_effect_dict.has(type):
 		var sound_effect: SoundEffect = sound_effect_dict[type]
 		if sound_effect.has_open_limit():
@@ -30,9 +30,9 @@ func create_2d_audio_at_location(location, type : SoundEffect.SOUND_EFFECT_TYPE)
 		push_error("Audio Manager failed to find setting for type ", type)
 
 
-func create_audio(type : SoundEffect.SOUND_EFFECT_TYPE) -> void:
+func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 	if sound_effect_dict.has(type):
-		var sound_effect : SoundEffect = sound_effect_dict[type]
+		var sound_effect: SoundEffect = sound_effect_dict[type]
 		if sound_effect.has_open_limit():
 			sound_effect.change_audio_count(1)
 			var new_audio: AudioStreamPlayer = AudioStreamPlayer.new()
