@@ -1,6 +1,6 @@
 @tool
 extends EditorScript
-## Once customized, automatically adds all SoundEffect resources in the [member audio_manager_path]'s sound_effects Array, so they can be called via the AudioManager.
+## Once customized, automatically adds all SoundEffect resources found in the [member folder_path] that are not already in the [member audio_manager_path]'s sound_effects Array to that array, so they can be called via the AudioManager.
 
 var audio_manager_path: String = "res://path/to/audio_manager/scene.tscn" ## The path to the audio manager scene.
 var audio_manage_scene = load(audio_manager_path) ## Loads the audio manage scene so the tool can modify it.
